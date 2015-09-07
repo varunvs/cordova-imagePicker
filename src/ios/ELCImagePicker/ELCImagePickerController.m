@@ -55,7 +55,7 @@
                                     message:message
                                    delegate:nil
                           cancelButtonTitle:nil
-                          otherButtonTitles:NSLocalizedString(@"Okay", nil), nil] show];
+                          otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
     }
     return shouldSelect;
 }
