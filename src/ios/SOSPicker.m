@@ -54,7 +54,7 @@
 	CDVPluginResult* result = nil;
 	NSMutableArray *resultStrings = [[NSMutableArray alloc] init];
     NSData* data = nil;
-    NSString* docsPath = [NSTemporaryDirectory()stringByStandardizingPath];
+    NSString* cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
     NSError* err = nil;
     NSFileManager* fileMgr = [[NSFileManager alloc] init];
     NSString* filePath;
@@ -67,7 +67,7 @@
 
         int i = 1;
         do {
-            filePath = [NSString stringWithFormat:@"%@/%@%03d.%@", docsPath, CDV_PHOTO_PREFIX, i++, @"jpg"];
+            filePath = [NSString stringWithFormat:@"%@/%@%03d.%@", cachePath, CDV_PHOTO_PREFIX, i++, @"jpg"];
         } while ([fileMgr fileExistsAtPath:filePath]);
         
         @autoreleasepool {
